@@ -1,30 +1,15 @@
 const savedCart = localStorage.getItem("cart");
 let cart = savedCart ? JSON.parse(savedCart) : [];
 
-const cartCountDisplay = document.getElementById("cart-count");
-const cartTotalDisplay = document.getElementById("cart-total");
-const cartItemsDisplay = document.getElementById("cart-items");
 const productsContainer = document.getElementById("products-container");
 
 function renderCart() {
   let count = 0;
-  let total = 0;
-  let html = "";
 
-  cart.forEach(function (item, index) {
+  cart.forEach(function (item) {
     count = count + item.quantity;
-    total = total + item.price * item.quantity;
-    html = html + `
-      <p>
-        ${item.name} × ${item.quantity} = ¥${item.price * item.quantity}
-        <button class="remove-btn" data-index="${index}">削除</button>
-      </p>
-    `;
   });
 
-   cartCountDisplay.textContent = count;
-  cartTotalDisplay.textContent = total;
-  cartItemsDisplay.innerHTML = html;
   localStorage.setItem("cart", JSON.stringify(cart));
 
   const cartBadge = document.getElementById("cart-badge");
@@ -49,13 +34,6 @@ function addToCart(product) {
   renderCart();
 }
 
-cartItemsDisplay.addEventListener("click", function (event) {
-  if (event.target.classList.contains("remove-btn")) {
-    const index = Number(event.target.dataset.index);
-    cart.splice(index, 1);
-    renderCart();
-  }
-});
 
 renderCart();
 
@@ -89,7 +67,3 @@ fetch("products.json")
     });
   });
 
-const checkoutBtn = document.getElementById("checkout-btn");
-checkoutBtn.addEventListener("click", function () {
-  window.location.href = "checkout.html";
-});

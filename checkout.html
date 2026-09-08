@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <head>
   <meta charset="UTF-8">
   <title>ご注文内容の確認</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="announce-bar">⚡ ただいま全商品送料無料キャンペーン中 ⚡</div>
 <header>
-  <img src="images/header.PNG" alt="MY SHOP" class="site-logo">
-  <span id="cart-badge" class="cart-badge">🛒 0</span>
+  <h1>超通信ストア</h1>
+  <a href="checkout.html" class="cart-link">
+    <span id="cart-badge" class="cart-badge">🛒 0</span>
+    <span>カートを確認する</span>
+  </a>
 </header>
+
+<div class="hero-logo">
+  <img src="images/header.PNG" alt="超通信ストア">
+</div>
 
   <main>
     <h2>ご注文内容の確認</h2>
@@ -26,6 +29,8 @@
     <p>合計金額: ¥<span id="checkout-total">0</span></p>
 
     <button id="purchase-btn">購入する</button>
+
+    <p><a href="index.html">← 商品一覧に戻る</a></p>
   </main>
 
   <script src="checkout.js"></script>
