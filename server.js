@@ -28,8 +28,8 @@ app.post("/create-checkout-session", async function (req, res) {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "http://127.0.0.1:5500/success.html",
-      cancel_url: "http://127.0.0.1:5500/checkout.html"
+      success_url: "https://relaxed-syrniki-da44ef.netlify.app/success.html",
+cancel_url: "https://relaxed-syrniki-da44ef.netlify.app/checkout.html"
     });
 
     res.json({ url: session.url });
@@ -44,3 +44,7 @@ const PORT = process.env.PORT || 4242;
 app.listen(PORT, function () {
   console.log("サーバーが起動しました: ポート" + PORT);
 });
+
+app.use(cors({
+  origin: "https://relaxed-syrniki-da44ef.netlify.app"
+}));

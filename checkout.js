@@ -35,7 +35,7 @@ renderCheckout();
 
 const purchaseBtn = document.getElementById("purchase-btn");
 purchaseBtn.addEventListener("click", function () {
-  fetch("http://localhost:4242/create-checkout-session", {
+fetch("https://my-ec-site-server.onrender.com/create-checkout-session", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
