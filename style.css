@@ -182,3 +182,7 @@ header {
   padding: 4px 10px;
   border-radius: 20px;
 }
+.site-logo {
+  height: 40px;
+  width: auto;
+}
