@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #d5e7ff;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px 40px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin: 12px 0 4px;
+}
+
+.price {
+  color: #d62828;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+button {
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.15s ease;
+}
+
+button:hover {
+  background-color: #444444;
+}
+main a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+#product-detail img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+#checkout-items p,
+#product-detail p:not(.price) {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 8px 0;
+}

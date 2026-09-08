@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "オリジナルTシャツ",
+    "price": 3200,
+    "image": "images/t-shirts.png",
+    "description": "上質なコットン100%を使用したオリジナルデザインTシャツです。普段使いしやすいゆったりシルエット。"
+  },
+  {
+    "id": 2,
+    "name": "ステッカーセット",
+    "price": 600,
+    "image": "images/stecker.png",
+    "description": "SATSUKIキャラクターのオリジナルステッカー。"
+  },
+  {
+    "id": 3,
+    "name": "マグカップ",
+    "price": 1800,
+    "image": "images/mag.png",
+    "description": "たっぷり入る日常使いしやすいマグカップ。"
+  },
+  {
+    "id": 4,
+    "name": "トートバッグ",
+    "price": 2400,
+    "image": "images/bag.png",
+    "description": "キャンバス地でA4ファイルもすっぽり入るトートバッグ。"
+  },
+  {
+    "id": 5,
+    "name": "アクリルキーホルダー",
+    "price": 900,
+    "image": "images/key.png",
+    "description": "ポーチやバッグにつけるとかわいい、アクリルキーホルダー。"
+  },
+  {
+    "id": 6,
+    "name": "パーカー",
+    "price": 5600,
+    "image":  "images/hoodie.png",
+    "description": "厚みのある素材で冬場にぴったりの上質なパーカー。"
+  }
+]
