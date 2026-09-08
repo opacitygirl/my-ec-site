@@ -39,6 +39,8 @@ app.post("/create-checkout-session", async function (req, res) {
   }
 });
 
-app.listen(4242, function () {
-  console.log("サーバーが起動しました: http://localhost:4242");
+const PORT = process.env.PORT || 4242;
+
+app.listen(PORT, function () {
+  console.log("サーバーが起動しました: ポート" + PORT);
 });
