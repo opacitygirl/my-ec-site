@@ -18,9 +18,16 @@ function renderCheckout() {
     `;
   });
 
-  checkoutItemsDisplay.innerHTML = html;
+    checkoutItemsDisplay.innerHTML = html;
   checkoutTotalDisplay.textContent = total;
   localStorage.setItem("cart", JSON.stringify(cart));
+
+  let count = 0;
+  cart.forEach(function (item) {
+    count = count + item.quantity;
+  });
+  const cartBadge = document.getElementById("cart-badge");
+  cartBadge.textContent = "🛒 " + count;
 }
 
 checkoutItemsDisplay.addEventListener("click", function (event) {

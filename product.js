@@ -44,7 +44,8 @@ fetch("products.json")
         });
       }
 
-      localStorage.setItem("cart", JSON.stringify(cart));
+            localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartBadge();
       alert(product.name + " をカートに追加しました");
     });
   });
@@ -52,3 +53,17 @@ fetch("products.json")
 checkoutBtn.addEventListener("click", function () {
   window.location.href = "checkout.html";
 });
+function updateCartBadge() {
+  const savedCart = localStorage.getItem("cart");
+  const cart = savedCart ? JSON.parse(savedCart) : [];
+
+  let count = 0;
+  cart.forEach(function (item) {
+    count = count + item.quantity;
+  });
+
+  const cartBadge = document.getElementById("cart-badge");
+  cartBadge.textContent = "🛒 " + count;
+}
+
+updateCartBadge();

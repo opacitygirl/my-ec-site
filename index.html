@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <head>
   <meta charset="UTF-8">
   <title>マイECサイト</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <header>
+  <div class="announce-bar">⚡ ただいま全商品送料無料キャンペーン中 ⚡</div>
+<header>
   <h1>MY SHOP</h1>
+  <span id="cart-badge" class="cart-badge">🛒 0</span>
 </header>
 
 <main>   
-  <h1>たのしいグッズショップ</h1>
+  <h1 class="page-title">たのしいグッズショップ</h1>
   <p>カート内の商品数: <span id="cart-count">0</span></p>
   <p>合計金額: ¥<span id="cart-total">0</span></p>
   <div id="cart-items"></div>

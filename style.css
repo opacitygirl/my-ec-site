@@ -2,24 +2,62 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #0B0E14;
+  --surface: #12161F;
+  --border: #262B36;
+  --accent: #7CFF4E;
+  --text: #FFFFFF;
+  --text-dim: #8B93A1;
+}
+
 body {
   font-family: "Noto Sans JP", sans-serif;
-  background-color: #d5e7ff;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.4) 1px, transparent 0),
+    radial-gradient(1px 1px at 120px 80px, rgba(255,255,255,0.3) 1px, transparent 0),
+    radial-gradient(1px 1px at 60px 150px, rgba(255,255,255,0.25) 1px, transparent 0),
+    radial-gradient(1px 1px at 200px 40px, rgba(255,255,255,0.3) 1px, transparent 0);
+  background-size: 220px 220px;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: var(--text);
+}
+
+/* 上部のネオングリーンの告知バー */
+.announce-bar {
+  background-color: var(--accent);
+  color: #0B0E14;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 header {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 20px 40px;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
   margin: 0;
+  font-family: "DotGothic16", sans-serif;
   font-size: 22px;
   letter-spacing: 1px;
+  color: var(--text);
+}
+
+.page-title {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin: 0 0 20px;
 }
 
 main {
@@ -31,80 +69,116 @@ main {
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 24px;
+  gap: 20px;
 }
 
 .card {
-  background-color: white;
-  border: 1px solid #eee;
-  border-radius: 12px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
   padding: 16px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(124, 255, 78, 0.25);
 }
 
 .card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
+  background-color: #1a1f2b;
 }
 
 .card h2 {
-  font-size: 16px;
+  font-size: 15px;
   margin: 12px 0 4px;
+  font-weight: 500;
+  color: var(--text);
 }
 
 .price {
-  color: #d62828;
-  font-weight: bold;
+  color: var(--accent);
+  font-weight: 700;
   font-size: 15px;
 }
 
 button {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: var(--accent);
+  color: #0B0E14;
   border: none;
   border-radius: 6px;
   padding: 10px 16px;
   font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   margin-top: 8px;
-  transition: background-color 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 button:hover {
-  background-color: #444444;
+  opacity: 0.85;
 }
+
 main a {
-  color: #1a1a1a;
+  color: var(--text-dim);
   text-decoration: none;
   font-size: 14px;
 }
 
 main a:hover {
-  text-decoration: underline;
+  color: var(--accent);
 }
 
 #product-detail img {
   width: 100%;
   max-width: 320px;
-  border-radius: 12px;
+  border-radius: 10px;
   display: block;
   margin-bottom: 16px;
+  background-color: var(--surface);
 }
 
 #checkout-items p,
 #product-detail p:not(.price) {
-  background-color: white;
-  border: 1px solid #eee;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 12px 16px;
   margin: 8px 0;
+  color: var(--text-dim);
+}
+
+.remove-btn {
+  background-color: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  font-weight: 400;
+  padding: 4px 10px;
+  font-size: 12px;
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+.remove-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  opacity: 1;
+}
+header {
+  position: relative;
+}
+
+.cart-badge {
+  background-color: var(--accent);
+  color: #0B0E14;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 20px;
 }

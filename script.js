@@ -22,10 +22,13 @@ function renderCart() {
     `;
   });
 
-  cartCountDisplay.textContent = count;
+   cartCountDisplay.textContent = count;
   cartTotalDisplay.textContent = total;
   cartItemsDisplay.innerHTML = html;
   localStorage.setItem("cart", JSON.stringify(cart));
+
+  const cartBadge = document.getElementById("cart-badge");
+  cartBadge.textContent = "🛒 " + count;
 }
 
 function addToCart(product) {
