@@ -126,7 +126,7 @@ button:hover {
 }
 
 main a {
-  color: var(--text-dim);
+  color: var(--text);
   text-decoration: none;
   font-size: 14px;
 }
@@ -151,7 +151,7 @@ main a:hover {
   border-radius: 8px;
   padding: 12px 16px;
   margin: 8px 0;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .remove-btn {
