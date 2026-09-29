@@ -246,8 +246,9 @@ header {
   .page-title {
     font-size: 20px;
   }
-  .product-layout {
+    .product-layout {
     flex-direction: column;
+    gap: 16px;
   }
 
   .product-image {
