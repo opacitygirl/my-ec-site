@@ -63,7 +63,7 @@ header h1 {
 main {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px 20px 40px;
 }
 
 .products {
@@ -135,17 +135,8 @@ main a:hover {
   color: var(--accent);
 }
 
-#product-detail img {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  display: block;
-  margin-bottom: 16px;
-  background-color: var(--surface);
-}
 
-#checkout-items p,
-#product-detail p:not(.price) {
+#checkout-items p {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -255,5 +246,82 @@ header {
   .page-title {
     font-size: 20px;
   }
+  .product-layout {
+    flex-direction: column;
+  }
 
+  .product-image {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .product-info button {
+    max-width: none;
+  }
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--surface);
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 13px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.back-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.product-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.product-image {
+  flex: 0 0 380px;
+  max-width: 380px;
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  background-color: var(--surface);
+}
+
+.product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-info h1 {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+
+.product-info .price {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.product-info .description {
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+.product-info button {
+  width: 100%;
+  max-width: 260px;
 }

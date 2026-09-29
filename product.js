@@ -17,14 +17,19 @@ fetch("products.json")
       return;
     }
 
-    productDetail.innerHTML = `
-  <img src="${product.image}" alt="${product.name}" style="width:300px;">
-  <h1>${product.name}</h1>
-  <p class="price">¥${product.price}</p>
-  <p>${product.description}</p>
-  <button id="add-btn">カートに追加</button>
+        productDetail.innerHTML = `
+  <div class="product-layout">
+    <div class="product-image">
+      <img src="${product.image}" alt="${product.name}">
+    </div>
+    <div class="product-info">
+      <h1>${product.name}</h1>
+      <p class="price">¥${product.price}</p>
+      <p class="description">${product.description}</p>
+      <button id="add-btn">カートに追加</button>
+    </div>
+  </div>
 `;
-
     const button = document.getElementById("add-btn");
     button.addEventListener("click", function () {
       const savedCart = localStorage.getItem("cart");
@@ -49,10 +54,7 @@ fetch("products.json")
       alert(product.name + " をカートに追加しました");
     });
   });
-  const checkoutBtn = document.getElementById("checkout-btn");
-checkoutBtn.addEventListener("click", function () {
-  window.location.href = "checkout.html";
-});
+  
 function updateCartBadge() {
   const savedCart = localStorage.getItem("cart");
   const cart = savedCart ? JSON.parse(savedCart) : [];
