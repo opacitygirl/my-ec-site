@@ -11,14 +11,18 @@ function renderCheckout() {
   cart.forEach(function (item, index) {
     total = total + item.price * item.quantity;
     html = html + `
-      <p>
-        ${item.name} × ${item.quantity} = ¥${item.price * item.quantity}
+      <div class="checkout-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="checkout-item-info">
+          <p class="checkout-item-name">${item.name} × ${item.quantity}</p>
+          <p class="checkout-item-price">¥${item.price * item.quantity}</p>
+        </div>
         <button class="remove-btn" data-index="${index}">削除</button>
-      </p>
+      </div>
     `;
   });
 
-    checkoutItemsDisplay.innerHTML = html;
+  checkoutItemsDisplay.innerHTML = html;
   checkoutTotalDisplay.textContent = total;
   localStorage.setItem("cart", JSON.stringify(cart));
 

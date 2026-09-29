@@ -39,13 +39,14 @@ fetch("products.json")
         return item.name === product.name;
       });
 
-      if (existingItem) {
+            if (existingItem) {
         existingItem.quantity = existingItem.quantity + 1;
       } else {
         cart.push({
           name: product.name,
           price: product.price,
-          quantity: 1
+          quantity: 1,
+          image: product.image
         });
       }
 

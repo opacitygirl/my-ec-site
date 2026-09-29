@@ -27,13 +27,13 @@ function addToCart(product) {
     cart.push({
       name: product.name,
       price: product.price,
-      quantity: 1
+      quantity: 1,
+      image: product.image
     });
   }
 
   renderCart();
 }
-
 
 renderCart();
 
