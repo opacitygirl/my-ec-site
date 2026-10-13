@@ -28,8 +28,14 @@ app.post("/create-checkout-session", async function (req, res) {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
+      shipping_address_collection: {
+        allowed_countries: ["JP"]
+      },
+      phone_number_collection: {
+        enabled: true
+      },
       success_url: "https://relaxed-syrniki-da44ef.netlify.app/success.html",
-cancel_url: "https://relaxed-syrniki-da44ef.netlify.app/checkout.html"
+      cancel_url: "https://relaxed-syrniki-da44ef.netlify.app/checkout.html"
     });
 
     res.json({ url: session.url });
