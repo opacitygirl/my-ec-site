@@ -292,6 +292,38 @@ main a:hover {
   width: 100%;
   max-width: 260px;
 }
+.legal-notice {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.legal-notice h3 {
+  margin: 0 0 8px;
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.legal-notice dl {
+  margin: 0;
+}
+
+.legal-notice dt {
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.legal-notice dd {
+  margin: 2px 0 0;
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.7;
+}
 
 /* ==========================
    スマホ向けの調整
