@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const products = require("./products.json");
 
 const app = express();
 app.use(cors());
@@ -9,20 +10,37 @@ app.use(express.json());
 
 app.post("/create-checkout-session", async function (req, res) {
   try {
-    const cart = req.body.cart;
+        const cart = req.body.cart;
 
-    const lineItems = cart.map(function (item) {
-      return {
+    if (!Array.isArray(cart) || cart.length === 0) {
+      return res.status(400).json({ error: "カートが空です" });
+    }
+
+    const lineItems = [];
+
+    for (const item of cart) {
+      const product = products.find(function (p) {
+        return p.id === Number(item.id);
+      });
+      const quantity = Number(item.quantity);
+
+      if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 99) {
+        return res.status(400).json({
+          error: "カートの内容が正しくありません。一度カートを空にして、もう一度商品を追加してください。"
+        });
+      }
+
+      lineItems.push({
         price_data: {
           currency: "jpy",
           product_data: {
-            name: item.name
+            name: product.name
           },
-          unit_amount: item.price
+          unit_amount: product.price
         },
-        quantity: item.quantity
-      };
-    });
+        quantity: quantity
+      });
+    }
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],

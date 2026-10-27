@@ -24,7 +24,8 @@ function addToCart(product) {
   if (existingItem) {
     existingItem.quantity = existingItem.quantity + 1;
   } else {
-    cart.push({
+      cart.push({
+      id: product.id,
       name: product.name,
       price: product.price,
       quantity: 1,
