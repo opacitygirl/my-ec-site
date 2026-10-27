@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announce-bar">⚡ ただいま全商品送料無料キャンペーン中 ⚡</div>
+  <header>
+    <h1>超通信ストア</h1>
+    <a href="checkout.html" class="cart-link">
+      <span id="cart-badge" class="cart-badge">🛒 0</span>
+      <span>カートを確認する</span>
+    </a>
+  </header>
+
+  <main>
+    <a href="index.html" class="back-link">← 商品一覧に戻る</a>
+
+    <h2 class="page-title">プライバシーポリシー</h2>
+
+    <section class="policy">
+      <p>【氏名または屋号】（以下「当店」）は、お客様の個人情報を大切に扱います。当店が取得する個人情報と、その利用方法を以下のとおり定めます。</p>
+
+      <h3>1. 取得する個人情報</h3>
+      <ul>
+        <li>氏名、住所、電話番号、メールアドレス</li>
+        <li>ご注文の内容</li>
+        <li>お問い合わせの内容</li>
+      </ul>
+      <p>クレジットカード番号などの決済情報は、決済代行サービス（Stripe）が処理します。当店はカード番号を取得・保存しません。</p>
+
+      <h3>2. 利用目的</h3>
+      <ul>
+        <li>ご注文の商品の発送</li>
+        <li>注文内容・発送状況などに関するご連絡</li>
+        <li>返品・交換、お問い合わせへの対応</li>
+        <li>不正な注文の防止</li>
+      </ul>
+      <p>上記以外の目的（広告メールの送付など）には利用しません。</p>
+
+      <h3>3. 第三者への提供・業務の委託</h3>
+      <p>当店は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供しません。ただし、次の場合は、業務に必要な範囲で情報を預け、または提供します。</p>
+      <ul>
+        <li>決済の処理：Stripe, Inc.</li>
+        <li>商品の配送：【利用する運送会社】</li>
+      </ul>
+
+      <h3>4. 個人情報の管理</h3>
+      <p>お客様のお名前・住所などの配送先情報は、当店のサーバーには保存せず、決済サービス（Stripe）上で管理します。当店は、発送などの業務に必要な期間（【期間】）に限って保管し、不要になった情報は適切に削除します。</p>
+
+      <h3>5. カートの情報について</h3>
+      <p>カートの内容はお客様のブラウザ内に保存されます。購入手続きの際に、決済のために当店のサーバーへ送信されます。</p>
+
+      <h3>6. 開示・訂正・利用停止のご請求</h3>
+      <p>ご本人から、保有する個人情報の開示、訂正、利用停止などのご請求があったときは、ご本人であることを確認のうえ、法令に従って対応します。下記の窓口までご連絡ください。</p>
+
+      <h3>7. お問い合わせ窓口</h3>
+      <p>【氏名または屋号】<br>メールアドレス：【お問い合わせ用メールアドレス】</p>
+
+      <h3>8. 改定について</h3>
+      <p>本ポリシーの内容は、必要に応じて改定します。改定後の内容は、このページに掲載します。</p>
+
+      <p class="policy-date">制定日：【年月日】</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="tokushoho.html">特定商取引法に基づく表記</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </footer>
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem("cart");
+      const cart = saved ? JSON.parse(saved) : [];
+      let count = 0;
+      cart.forEach(function (item) {
+        count = count + item.quantity;
+      });
+      document.getElementById("cart-badge").textContent = "🛒 " + count;
+    })();
+  </script>
+</body>
+</html>

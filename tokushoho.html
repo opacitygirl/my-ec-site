@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>特定商取引法に基づく表記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announce-bar">⚡ ただいま全商品送料無料キャンペーン中 ⚡</div>
+  <header>
+    <h1>超通信ストア</h1>
+    <a href="checkout.html" class="cart-link">
+      <span id="cart-badge" class="cart-badge">🛒 0</span>
+      <span>カートを確認する</span>
+    </a>
+  </header>
+
+  <main>
+    <a href="index.html" class="back-link">← 商品一覧に戻る</a>
+
+    <h2 class="page-title">特定商取引法に基づく表記</h2>
+
+    <section class="legal-notice">
+      <dl>
+        <dt>販売事業者</dt>
+        <dd>【氏名または屋号】</dd>
+
+        <dt>運営責任者</dt>
+        <dd>【氏名】</dd>
+
+        <dt>所在地</dt>
+        <dd>【住所】</dd>
+
+        <dt>電話番号</dt>
+        <dd>【電話番号】</dd>
+
+        <dt>メールアドレス</dt>
+        <dd>【お問い合わせ用メールアドレス】</dd>
+
+        <dt>販売価格</dt>
+        <dd>各商品のページに表示しています（税込）。</dd>
+
+        <dt>商品代金以外の必要料金</dt>
+        <dd>送料：全商品無料（キャンペーン中）。キャンペーン終了後は【金額】円。</dd>
+
+        <dt>お支払い方法</dt>
+        <dd>クレジットカード（Stripeによる決済）</dd>
+
+        <dt>お支払い時期</dt>
+        <dd>ご注文の確定時に決済されます。</dd>
+
+        <dt>商品のお届け時期</dt>
+        <dd>ご注文から【5〜7】営業日以内に発送します。</dd>
+
+        <dt>返品・交換について</dt>
+        <dd>【商品に不備があった場合のみ、到着後7日以内にご連絡ください。お客様都合の返品はお受けできません。】</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="tokushoho.html">特定商取引法に基づく表記</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </footer>
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem("cart");
+      const cart = saved ? JSON.parse(saved) : [];
+      let count = 0;
+      cart.forEach(function (item) {
+        count = count + item.quantity;
+      });
+      document.getElementById("cart-badge").textContent = "🛒 " + count;
+    })();
+  </script>
+</body>
+</html>

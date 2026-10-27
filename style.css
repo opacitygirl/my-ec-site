@@ -330,6 +330,54 @@ main a:hover {
    画面幅が600px以下のときだけ、ここが適用される
    ★必ずファイルの一番最後に置くこと★
 ========================== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--text-dim);
+  font-size: 13px;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.policy {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.policy h3 {
+  margin: 20px 0 6px;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.policy p {
+  margin: 6px 0;
+  color: var(--text-dim);
+}
+
+.policy ul {
+  margin: 6px 0;
+  padding-left: 20px;
+  color: var(--text-dim);
+}
+
+.policy-date {
+  margin-top: 24px;
+  text-align: right;
+}
+
 @media (max-width: 600px) {
 
   body {
