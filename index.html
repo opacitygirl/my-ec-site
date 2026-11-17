@@ -2,9 +2,16 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>超通信ストア</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>超通信ストア｜「諭吉・皐月の超通信」公式グッズ</title>
+  <meta name="description" content="Podcast「諭吉・皐月の超通信」の公式グッズストア。すべてこのサイト限定のオリジナル商品です。全商品送料無料。">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:title" content="超通信ストア">
+  <meta property="og:description" content="Podcast「諭吉・皐月の超通信」の公式グッズストア。すべてこのサイト限定のオリジナル商品です。全商品送料無料。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://relaxed-syrniki-da44ef.netlify.app/">
+  <meta property="og:image" content="https://relaxed-syrniki-da44ef.netlify.app/images/header.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -21,18 +28,63 @@
 
 <div class="hero-logo">
   <img src="images/header.jpeg" alt="超通信ストア">
+  <div class="hero-overlay">
+    <p class="hero-catch">「諭吉・皐月の超通信」<br>公式グッズストア</p>
+    <p class="hero-sub">すべてこのサイト限定のオリジナル商品です。</p>
+    <a href="#products" class="cta-btn">商品を見る ↓</a>
+  </div>
 </div>
 
-<main>   
-  <h1 class="page-title">超通信ストアへようこそ！</h1>
-  <p>グッズを販売しています。すべてこのサイト限定のオリジナル商品です。</p>
-  <div class="products" id="products-container">
-</div>
-<script src="script.js"></script>
+<main>
+  <h2 class="section-title" id="products">商品一覧</h2>
+  <div class="products" id="products-container"></div>
+
+  <section class="info-section">
+    <h2 class="section-title">番組について</h2>
+    <p>「諭吉・皐月の超通信」は、ミュージシャンの諭吉佳作/menと、タレントの奥森皐月によるPodcast番組。毎週土曜日19時ごろ配信中。ハッシュタグは #超通信、お便りは ykcstk@gmail.com まで。</p>
+    <div class="footer-sns">
+      <a href="https://open.spotify.com/show/2XKaQiJGmb0gBbqnSEl22o" target="_blank" rel="noopener">Spotifyで聴く</a>
+      <a href="https://www.youtube.com/channel/UCjxQhOrXv0NpNMLTWEBR3eA" target="_blank" rel="noopener">YouTubeで観る</a>
+      <a href="https://podcasts.apple.com/jp/podcast/id1819439576" target="_blank" rel="noopener">Apple Podcasts</a>
+      <a href="https://x.com/ykcstk" target="_blank" rel="noopener">公式X（@ykcstk）</a>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2 class="section-title">よくある質問</h2>
+    <details class="faq-item">
+      <summary>送料はかかりますか？</summary>
+      <p>全商品、送料無料です。表示価格（税込）以外に料金はかかりません。</p>
+    </details>
+    <details class="faq-item">
+      <summary>注文からどのくらいで届きますか？</summary>
+      <p>ご注文から5〜7営業日以内に、日本郵便で発送します。</p>
+    </details>
+    <details class="faq-item">
+      <summary>支払い方法は？</summary>
+      <p>クレジットカードのみです。決済はStripeの画面で安全に行われます。当店がカード番号を取得・保存することはありません。</p>
+    </details>
+    <details class="faq-item">
+      <summary>返品・交換はできますか？</summary>
+      <p>商品に不備があった場合のみ、到着後7日以内にご連絡ください。お客様都合の返品はお受けできません。</p>
+    </details>
+    <details class="faq-item">
+      <summary>問い合わせ先は？</summary>
+      <p>ykcstk+shop@gmail.com までメールでご連絡ください。</p>
+    </details>
+  </section>
 </main>
     <footer class="site-footer">
+    <div class="footer-sns">
+      <a href="https://open.spotify.com/show/2XKaQiJGmb0gBbqnSEl22o" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://www.youtube.com/channel/UCjxQhOrXv0NpNMLTWEBR3eA" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://podcasts.apple.com/jp/podcast/id1819439576" target="_blank" rel="noopener">Apple Podcasts</a>
+      <a href="https://x.com/ykcstk" target="_blank" rel="noopener">公式X（@ykcstk）</a>
+    </div>
     <a href="tokushoho.html">特定商取引法に基づく表記</a>
     <a href="privacy.html">プライバシーポリシー</a>
   </footer>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
 </body>
 </html>

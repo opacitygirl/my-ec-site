@@ -3,7 +3,21 @@ let cart = savedCart ? JSON.parse(savedCart) : [];
 
 const productsContainer = document.getElementById("products-container");
 
-function renderCart() {
+function formatPrice(price) {
+  return "¥" + price.toLocaleString("ja-JP");
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(function () {
+    toast.classList.remove("show");
+  }, 2200);
+}
+
+function renderCart(bump) {
   let count = 0;
 
   cart.forEach(function (item) {
@@ -14,6 +28,12 @@ function renderCart() {
 
   const cartBadge = document.getElementById("cart-badge");
   cartBadge.textContent = "🛒 " + count;
+
+  if (bump) {
+    cartBadge.classList.remove("bump");
+    void cartBadge.offsetWidth;
+    cartBadge.classList.add("bump");
+  }
 }
 
 function addToCart(product) {
@@ -33,10 +53,11 @@ function addToCart(product) {
     });
   }
 
-  renderCart();
+  renderCart(true);
+  showToast(product.name + " をカートに追加しました 🛒");
 }
 
-renderCart();
+renderCart(false);
 
 fetch("products.json")
   .then(function (response) {
@@ -50,7 +71,7 @@ fetch("products.json")
       card.innerHTML = `
         <img src="${product.image}" alt="${product.name}">
         <h2>${product.name}</h2>
-        <p class="price">¥${product.price}</p>
+        <p class="price">${formatPrice(product.price)}</p>
         <button class="add-btn">カートに追加</button>
       `;
 
@@ -67,4 +88,3 @@ fetch("products.json")
       });
     });
   });
-
